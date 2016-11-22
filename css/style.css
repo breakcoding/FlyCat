@@ -1,0 +1,256 @@
+/*--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+	--*/
+	body{
+		margin:0;
+		padding:0;
+		background:#fff;
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+	body a{
+		transition:0.5s all;
+		-webkit-transition:0.5s all;
+		-moz-transition:0.5s all;
+		-o-transition:0.5s all;
+		-ms-transition:0.5s all;
+	}
+	h1,h2,h3,h4,h5,h6{
+		margin:0;			   
+	}	
+	p{
+		margin:0;
+	}
+	ul{
+		margin:0;
+		padding:0;
+	}
+
+	.navbar {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.banner {
+		margin: 0px;
+		padding: 0px;
+		background-image: url("../images/1.jpeg"); 
+		height: 600px;
+		min-height: 800px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.container p {
+		font-size: 20px;
+	}
+
+	.area {
+		background: #42403C;
+		padding: 50px;
+		margin: 0px;
+		height: 650px;
+		color: white;
+	}
+
+	/*Form de pedido*/
+	.logo{
+		font-size: 3.2em;
+		color: #fff;
+		font-style: bold;
+		font-weight: 500;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.logo-buscar{
+		font-size: 24px;
+		color: #fff;
+		font-style: bold;
+		font-weight: 500;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.form-area{
+		width: 400px;
+		margin:0 auto;
+	}
+
+	.input-form{
+		height: 20px;
+		margin-bottom: 15px;
+		width: 100%;
+		display: block;
+		line-height: 5px;
+		font-size: 18px;
+		color: white;
+		-webkit-appearence:none;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		border-bottom: 2px solid white;
+	}
+
+	.input-formclien {
+		height: 20px;
+		margin-bottom: 15px;
+		width: 100%;
+		display: block;
+		line-height: 5px;
+		font-size: 18px;
+		color: black;
+		-webkit-appearence:none;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		border-bottom: 2px solid black;
+	}
+
+	.input-date{
+		background: transparent;
+		width: 100%;
+		font-size: 18px;
+		margin-bottom: 15px;
+		color: white;
+		border: 0;
+		outline: 0;
+		border-bottom: 2px solid white;
+	}
+
+	.input-select{
+		background: transparent;
+		border: 0;
+		outline: 0;
+		width: 100%;
+		font-size: 18px;
+		margin-bottom: 15px;
+		color: white;
+		border-bottom: 2px solid white;
+	}
+
+	.input-selectclient {
+		background: transparent;
+		border: 0;
+		outline: 0;
+		width: 100%;
+		font-size: 18px;
+		margin-bottom: 15px;
+		color: black;
+		border-bottom: 2px solid black;
+	}
+
+	.input-button{
+		color: white;
+		width: 100%;
+		margin: 15px 15px;
+		background: #717E8C;
+		border-radius: 8px;
+		border: 1px solid white;
+		font-size: 18px;
+	}
+
+	.input-button:hover{
+		background: #454D54;
+	}
+
+	.input-form:hover, .input-date:hover, .input-select:hover{
+		border-bottom: 2px solid #00887C;
+	}
+
+	option{
+		background: rgba(0,0,0,0.5);
+		color: white;
+	}
+
+	.input-form:focus, .input-date:focus, .input-select:focus{
+		border-bottom: 2px solid #00887C;
+	}
+
+	/*Descripcion*/
+	.div-center{
+		display: flex;
+		justify-content: center;
+		margin: 50px 200px;
+	}
+
+	/* Footer */
+	.foot {
+		background-color: #999999;
+	}
+
+	li{
+		list-style: none;
+		color: white;
+		font-size: 24px;
+		
+	}
+
+	.opt li a{
+		background-color: #999999;
+	}
+
+/*.opt li a:hover{
+    background-color: white;
+}
+
+.opt li:hover a{
+    background-color: white;
+    }*/
+
+    .div-center-footer{
+    	display: flex;
+    	justify-content: center;
+    	margin: 5px 200px;
+    }
+
+    td {
+    	width: 30px;
+    	height: 30px;
+    	text-align: center;
+    	vertical-align: center;
+    }
+
+    td img{
+    	width: 100%;
+    	background-size: cover;
+    }
+
+    .img-precio {
+    	width: 100%;
+    	height: 350px;
+    }
+
+    .img-pricing {
+    	width: 200px;
+    	height: 200px;
+    }
+
+    .img-precio,
+    .carousel-inner > .item > img.img-precio,
+    .carousel-inner > .item > a > img.img-precio {
+    	display: block;
+    	width: 100%;
+    	height: 350px;
+    }
+
+    .linea {
+    	margin-top:5px;
+    	margin-bottom:5px;
+    	height:1px;
+    	width:100%;
+    	border-top:1px solid gray;
+    }
+
+    footer{
+    	margin-top: 25px;
+    }
+
+    .altodiv{
+    	min-height: 610px;
+    }

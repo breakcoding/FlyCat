@@ -1,0 +1,269 @@
+
+for ($i=0; $i < $_SESSION["adultos"]+$_SESSION["niños"] ; $i++) { 
+	$sql = "INSERT INTO travel.asiento(numAsiento, clase, vuelo_id) VALUES ('{$_SESSION['asientos'][$i]}', '{$_SESSION['clase']}','{$_SESSION['idVueloIda']}');";
+	$result = $conn->query($sql);
+}
+
+echo '<script>';
+echo "function check(){";
+echo 'var num = ' . json_encode($_SESSION["adultos"]) . ';';
+echo "var total = document.querySelectorAll('input[type='checkbox']:checked').length;";
+echo "alert(total);";
+echo "if (total < num) {";
+echo "alert(num);";
+echo "}";
+echo "}";
+echo "window.addEventListener('load', check);";
+echo '</script>';
+
+<?php 
+echo '<script>';
+echo "function check() {";
+echo 'var num = ' . json_encode($_SESSION["adultos"]) . ';';
+echo "var total = document.querySelectorAll('checkbox:checked').length;";
+echo "alert(total);";
+echo "if (total > parseInt(num)) {";
+echo "alert(total);";
+echo "}";
+echo "}";
+echo '</script>';
+?>
+
+
+	<!-- <td><input type="checkbox" name="asientos[]"  value="11"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="12"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="13"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="14"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="15"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="16"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="17"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="18"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="19"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="110"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="111"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="112"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="113"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="114"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="115"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="116"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="117"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="118"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="119"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="120"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="121"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="122"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="123"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="124"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="125"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="126"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="127"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="128"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="129"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="130"><a href="#" data-toggle="tooltip" title="Fila: 1 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="asientos[]"  value="21"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="22"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="23"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="24"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="25"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="26"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="27"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="28"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="29"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="210"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="211"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="212"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="213"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="214"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="215"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="216"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="217"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="218"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="219"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="220"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="221"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="222"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="223"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="224"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="225"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="226"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="227"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="228"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="229"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="230"><a href="#" data-toggle="tooltip" title="Fila: 2 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="asientos[]"  value="31"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="32"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="33"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="34"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="35"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="36"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="37"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="38"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="39"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="310"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="311"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="312"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="313"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="314"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="315"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="316"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="317"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="318"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="319"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="320"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="321"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="322"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="323"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="324"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="325"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="326"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="327"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="328"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="329"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="330"><a href="#" data-toggle="tooltip" title="Fila: 3 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr> -->
+
+
+				<tr>
+					<td><input type="checkbox" name="asientos[]"  value="41"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="42"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="43"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="44"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="45"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="46"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="47"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="48"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="49"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="410"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="411"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="412"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="413"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="414"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="415"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="416"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="417"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="418"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="419"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="420"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="421"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="422"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="423"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="424"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="425"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="426"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="427"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="428"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="429"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="430"><a href="#" data-toggle="tooltip" title="Fila: 4 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="asientos[]"  value="51"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="52"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="53"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="54"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="55"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="56"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="57"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="58"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="59"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="510"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="511"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="512"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="513"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="514"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="515"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="516"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="517"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="518"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="519"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="520"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="521"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="522"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="523"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="524"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="525"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="526"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="527"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="528"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="529"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="530"><a href="#" data-toggle="tooltip" title="Fila: 5 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="asientos[]"  value="61"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 1"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="62"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 2"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="63"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 3"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="64"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 4"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="65"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 5"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="66"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 6"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="67"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 7"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="68"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 8"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="69"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna: 9"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="610"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:10"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="611"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:11"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="612"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:12"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="613"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:13"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="614"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:14"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="615"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:15"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="616"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:16"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="617"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:17"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="618"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:18"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="619"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:19"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="620"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:20"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="621"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:21"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="622"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:22"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="623"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:23"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="624"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:24"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="625"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:25"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="626"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:26"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="627"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:27"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="628"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:28"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="629"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:29"><img src="./images/disponible.png" alt=""></a></td>
+					<td><input type="checkbox" name="asientos[]"  value="630"><a href="#" data-toggle="tooltip" title="Fila: 6 Columna:30"><img src="./images/disponible.png" alt=""></a></td>
+				</tr>
+
+				<!-- <div class="col-lg-12">
+			<div class="page-header">
+				<h1>Informacion de la busqueda: </h1>
+			</div>
+			<div class="col-lg-4">
+				<h1>Origen: </h1>
+				<div class="carousel slide" data-ride="carousel" >
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<?php
+							$res=$conn->query("select * from travel.origen WHERE id = ".$_SESSION["origen"].";");		
+							$row=$res->fetch_assoc();				
+							print "<img src=".$row["imgUrlO"]." class='img-precio'>"
+							?>
+							<div class="carousel-caption">
+								<?php 
+								echo "<h1>".$row["nomCiudO"]."</h1>" ; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<h1>Destino: </h1>
+				<div class="carousel slide" data-ride="carousel" >
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<?php
+							$res=$conn->query("select * from travel.destino WHERE id = ".$_SESSION["destino"].";");
+							$row=$res->fetch_assoc();				
+							print "<img src=".$row["imgUrlD"]." class='img-precio'>" 
+							?>
+							<div class="carousel-caption">
+								<?php 
+								echo "<h1>".$row["nomCiudD"]."</h1>" ; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div> <--></-->
